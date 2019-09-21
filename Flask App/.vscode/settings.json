@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "/Users/alimurtazashaikh/.virtualenvs/dl/bin/python",
+
+    "python.venvFolders": [
+        "envs",
+        ".pyenv",
+        ".direnv",
+        ".virtualenvs"
+      ],
+
+      "python.venvPath": "~/.virtualenvs"
+}

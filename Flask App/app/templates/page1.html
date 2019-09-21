@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<script src="/static/pca_playground_app.js" charset="utf-8"></script>
+
+<script>
+pca_dims.show = {{show}};
+pca_dims.total = {{total}};
+</script>
+
+<div class="row">
+    <div class="col-md-8">
+        <form class="form-inline" id="pca_dim_form" action="/getImageFromPCA" method="post" target="myIframe" novalidate>
+            <input type="hidden" name="pca_array" id="pca_array"/>
+            {% for i in range(0,show) %}
+                <input type="number" class="form-control" id="pca_{{i}}" value="0" step="200">
+            {% endfor %}
+        </form>
+    </div>
+    <div class="col-md-4">
+        <iframe src="" name="myIframe" class="test"></iframe>  
+    </div>
+</div>
+
+{% endblock %}
+
+
+
