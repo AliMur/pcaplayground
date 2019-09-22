@@ -21,6 +21,8 @@ function submitToServer(){
 }
 
 function updateVal(field_index,new_value){
+    if( Number.isNaN(new_value))
+        new_value=0
     pca_dims.arr[field_index] = new_value;
     pca_dims.updates_sent_to_server = false;
 }
