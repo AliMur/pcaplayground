@@ -1,8 +1,8 @@
-from app import app, imageList, pcaObj, componentCount
+from ..app import app, imageList, pcaObj, componentCount
 from flask import request,send_file,jsonify,json,render_template
 import io
-import util
 import json
+from ..util import getImageFromPCA
 
 # entry point to the app
 @app.route('/')
@@ -15,7 +15,7 @@ def getForm():
 def serviceGetImageFromPCA():
     pca_array_str = request.form['pca_array']
     pca_array = json.loads(pca_array_str)
-    png = util.getImageFromPCA(pcaObj(),pca_array)
+    png = getImageFromPCA(pcaObj(),pca_array)
     response = send_file(io.BytesIO(png),mimetype='image/png')
     return response
 

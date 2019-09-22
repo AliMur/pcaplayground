@@ -1,5 +1,5 @@
 from flask import Flask
-from config import Config
+from ..config import Config
 from flask_bootstrap import Bootstrap
 from sklearn.decomposition import PCA
 from joblib import load
@@ -35,4 +35,4 @@ def componentCount():
         componentcount_ = len(pcaObj().components_)
     return componentcount_
 
-from app import routes
+from ..app import routes
