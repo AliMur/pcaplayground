@@ -11,7 +11,16 @@ pca_dims.total = {{total}};
 
 <div class="row">
     <div class="col-md-8">
-        <form class="form-inline" id="pca_dim_form" action="/getImageFromPCA" method="post" target="myIframe" novalidate>
+        <h2>Instructions</h2>
+        <h3>
+            Change the number in the input fields and see the image on the right change with it.
+        </h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <form class="form-inline" id="pca_dim_form" action="/getImageFromPCA" method="post" target="resultFrame" novalidate>
             <input type="hidden" name="pca_array" id="pca_array"/>
             {% for i in range(0,show) %}
                 <input type="number" class="form-control" id="pca_{{i}}" value="0" step="200">
@@ -19,7 +28,7 @@ pca_dims.total = {{total}};
         </form>
     </div>
     <div class="col-md-4">
-        <iframe src="" name="myIframe" class="test"></iframe>  
+        <iframe src="" name="resultFrame" id="resultFrame" class="test"></iframe>  
     </div>
 </div>
 

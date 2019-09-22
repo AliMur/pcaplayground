@@ -33,9 +33,21 @@ function attachListeners(){
     }
 }
 
+function attachCssToResultsFrame(){
+    $('#resultFrame').load(function(){
+        console.log('test');
+        var contents = $(this).contents();
+        var head = $(contents).find("head");
+        head.append($("<link/>", 
+        { rel: "stylesheet", href: '/static/result_style.css', type: "text/css" }
+        ));       
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     initPCAArr();
     attachListeners();
     submitToServer();
     setInterval(submitToServer, 3000);
+    attachCssToResultsFrame();
 });

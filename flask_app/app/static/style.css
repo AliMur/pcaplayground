@@ -2,3 +2,7 @@ iframe.test
 {
     border: none;
 }
+
+input[type=number]::-webkit-inner-spin-button {
+    zoom:2
+ }
